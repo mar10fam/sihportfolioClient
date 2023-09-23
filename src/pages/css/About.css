@@ -1,0 +1,39 @@
+.aboutme-container {
+    margin: 40px auto 40px;
+    width: 50%;
+}
+
+.aboutme-container p {
+    font-size: 24pt;
+    font-weight: 600;
+    margin-left: 10px;
+    text-align: left;
+}
+
+.aboutme-container .aboutme-description {
+    font-weight: 200;
+    font-size: 14pt;
+}
+
+.divider {
+    border: none;
+    border-top: 2px solid #ffffff;
+    margin: 50px auto 50px;
+    max-width: 100%;
+}
+
+.aboutme-container ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.aboutme-container li {
+    background-color: #1C1C1C;
+    color: #ffffff;
+    padding: 0px 15px 0px 5px;
+    margin: 10px;
+    border-radius: 3px;
+    font-size: 12pt;
+}

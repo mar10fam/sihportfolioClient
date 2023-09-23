@@ -1,0 +1,42 @@
+.header {
+    color: #FFFFFF;
+    background-image: url(../../images/header.png);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.header p {
+    font-family: 'Raleway', sans-serif;
+}
+
+.pfp {
+    width: 150px;
+    height: 150px; 
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px auto 10px auto;
+}
+
+.pfp-image {
+    width: 100%;
+    height: auto;
+}
+
+.username {
+    font-family: 'Raleway', sans-serif;
+    font-size: 20pt;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.header-meta {
+    font-size: 11pt;
+    margin-bottom: 0;
+}

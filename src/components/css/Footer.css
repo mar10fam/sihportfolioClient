@@ -1,0 +1,11 @@
+.footer {
+    background-color: #000000;
+    display: flex;
+}
+
+.footer ul {
+    display: flex;
+    margin: 20px auto;
+    list-style: none;
+    gap: 4rem;
+}

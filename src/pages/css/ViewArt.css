@@ -1,0 +1,29 @@
+.viewArt {
+    margin: 0px;
+}
+
+.viewArt .title {
+    font-size: 40pt;
+}
+
+.viewArt .date {
+    font-size: 16pt;
+}
+
+.viewArt .description {
+    margin: 40px auto 60px;
+    max-width: 60rem;
+}
+
+.viewArt img {
+    border: 3px solid #FF3939;
+    border-radius: 5px;
+    width: 40%;
+}
+
+.updateForm {
+    width: 800px;
+    margin: 60px auto 20px;
+    background-color: #0F0402;
+    padding: 20px;
+}
