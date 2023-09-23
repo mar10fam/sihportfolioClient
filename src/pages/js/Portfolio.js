@@ -21,6 +21,7 @@ const Portfolio = () => {
             select = "SELECT * FROM artworks WHERE type = 'study'";
         }
         Axios.post("https://sihportfolio-1d10e3a48d8c.herokuapp.com/portfolio", {
+            withCredentials: true,
             select
         }).then((res) => {
             setArtworks(res.data);
