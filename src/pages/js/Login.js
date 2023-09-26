@@ -18,11 +18,15 @@ const Login = () => {
       password
     }).then((res) => {
       console.log("Server Response: ", res);
-    }).then((res) => {
-      if(res.data.loggedIn === true) {
-        setLoggedIn(true);
-        navigate('/');
-      }
+      Axios.get("https://sihportfolio-1d10e3a48d8c.herokuapp.com/login")
+      .then((res) => {
+        if(res.data.loggedIn === true) {
+          setLoggedIn(true);
+          navigate('/');
+        }
+      }).catch((err) => {
+        console.error(err);
+      })
     }).catch((err) => {
       console.error("Error: ", err);
     });
