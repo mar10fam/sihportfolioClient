@@ -19,21 +19,14 @@ const Login = () => {
     }).then((res) => {
       console.log("Server Response: ", res);
     }).then(() => {
-      setLoggedIn(true);
-      navigate('/');
+      if(res.data.loggedIn === true) {
+        setLoggedIn(true);
+        navigate('/');
+      }
     }).catch((err) => {
       console.error("Error: ", err);
     });
   };
-
-  useEffect(() => {
-    Axios.get("https://sihportfolio-1d10e3a48d8c.herokuapp.com/login").then((response) => {
-      console.log(response);
-      if(response.data.loggedIn === true) {
-        setLoggedIn(true);
-      }
-    });
-  }, [setLoggedIn]);
 
   return (
     <div className="login-container">
