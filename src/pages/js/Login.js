@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
 import Axios from 'axios';
 import { AuthContext } from '../../Context/AuthContext';
@@ -18,7 +18,7 @@ const Login = () => {
       password
     }).then((res) => {
       console.log("Server Response: ", res);
-    }).then(() => {
+    }).then((res) => {
       if(res.data.loggedIn === true) {
         setLoggedIn(true);
         navigate('/');
