@@ -20,6 +20,7 @@ const Login = () => {
       console.log("Server Response: ", res);
       Axios.get("https://sihportfolio-1d10e3a48d8c.herokuapp.com/login")
       .then((res) => {
+        console.log("Login GET Request response:", res);
         if(res.data.loggedIn === true) {
           setLoggedIn(true);
           navigate('/');
