@@ -20,7 +20,7 @@ const Portfolio = () => {
         } else {
             select = "SELECT * FROM artworks WHERE type = 'study'";
         }
-        Axios.post("https://sihportfolio-1d10e3a48d8c.herokuapp.com/portfolio", {
+        Axios.post("https://sihportfolio-1b62f97804c9.herokuapp.com/portfolio", {
             withCredentials: true,
             select
         }).then((res) => {
@@ -31,7 +31,7 @@ const Portfolio = () => {
     }, [category]);
 
     const deleteArt = (id, art) => {
-        Axios.delete(`https://sihportfolio-1d10e3a48d8c.herokuapp.com/deleteArt/${id}/${art}`)
+        Axios.delete(`https://sihportfolio-1b62f97804c9.herokuapp.com/portfolio/deleteArt/${id}/${art}`)
         .then((res) => {
             setArtworks(artworks.filter((val) => {
                 return val.id !== id;
@@ -53,7 +53,7 @@ const Portfolio = () => {
                     return (
                         <div className="portfolio-artworks" key={index}>
                             <Link to={`/viewArt/${artwork.id}`}>
-                                <img src={`https://sihportfolio-1d10e3a48d8c.herokuapp.com/images/${artwork.art}`} alt={artwork.title} />
+                                <img src={`https://sihportfolio-1b62f97804c9.herokuapp.com/images/${artwork.art}`} alt={artwork.title} />
                             </Link>
                             <div className="art-title">{artwork.title}</div>
                             {loggedIn && 

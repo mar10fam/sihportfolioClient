@@ -16,7 +16,7 @@ const Navbar = () => {
 
     const logout = async () => {
         try {
-            const response = await Axios.get('https://sihportfolio-1d10e3a48d8c.herokuapp.com/logout');
+            const response = await Axios.get('https://sihportfolio-1b62f97804c9.herokuapp.com/logout');
             if(response.status === 200) {
                 console.log("Logout Successful");
                 setLoggedIn(false);
@@ -53,15 +53,11 @@ const Navbar = () => {
                         <FontAwesomeIcon icon={faEnvelope} size="2xl" className="email-icon"/>
                     </a>
                 </li>
-                {!loggedIn ? (
-                    <li><Link to="/login"><FontAwesomeIcon icon={faUser} size="2xl" className="login-icon" /></Link></li>
-                ) : (
-                    <>
-                        <li><Link to='/form'><FontAwesomeIcon icon={faClipboard} size="2xl" className="form-icon" /></Link></li>
-                        <FontAwesomeIcon icon={faRightFromBracket} size="2xl" className="logout-icon" onClick={logout}/>
-                    </>
-                )}
-                
+                <li><Link to="/login"><FontAwesomeIcon icon={faUser} size="2xl" className="login-icon" /></Link></li>
+                {loggedIn && <>
+                <li><Link to='/form'><FontAwesomeIcon icon={faClipboard} size="2xl" className="form-icon" /></Link></li>
+                <FontAwesomeIcon icon={faRightFromBracket} size="2xl" className="logout-icon" onClick={logout}/>
+                </>}
             </ul>
         </nav>
     )

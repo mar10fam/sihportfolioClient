@@ -13,8 +13,11 @@ const Form = () => {
 
   const dateFormat = (date) => {
     const dateObject = new Date(date);
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    const formatted = dateObject.toLocaleDateString(undefined, options);
+      const timeZoneOffset = dateObject.getTimezoneOffset();
+      const localDate = new Date(dateObject.getTime() + timeZoneOffset * 60000);
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      const formatted = localDate.toLocaleDateString(undefined, options);
+  
     setDate(formatted);
   }
 
@@ -28,7 +31,7 @@ const Form = () => {
     formData.append('description', description);
     formData.append('art', art);
   
-    Axios.post("https://sihportfolio-1d10e3a48d8c.herokuapp.com/form", 
+    Axios.post("https://sihportfolio-1b62f97804c9.herokuapp.com/form", 
       formData
     ).then((res) => {
       console.log("Server Response: ", res);

@@ -14,21 +14,23 @@ const ViewArt = () => {
     const [newDescription, setNewDescription] = useState('');
 
     const dateFormat = (date) => {
-        const dateObject = new Date(date);
-        const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        const formatted = dateObject.toLocaleDateString(undefined, options);
+      const dateObject = new Date(date);
+      const timeZoneOffset = dateObject.getTimezoneOffset();
+      const localDate = new Date(dateObject.getTime() + timeZoneOffset * 60000);
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      const formatted = localDate.toLocaleDateString(undefined, options);
         setNewDate(formatted);
       }
 
     const update = (event) => {
         event.preventDefault();
-        Axios.put("https://sihportfolio-1d10e3a48d8c.herokuapp.com/update", {
+        Axios.put("https://sihportfolio-1b62f97804c9.herokuapp.com/update", {
             id: id,
             title: newTitle,
             date: newDate,
             description: newDescription
         }).then((res) => {
-            Axios.get(`https://sihportfolio-1d10e3a48d8c.herokuapp.com/viewArt/${id}`)
+            Axios.get(`https://sihportfolio-1b62f97804c9.herokuapp.com/update/viewArt/${id}`)
             .then((res) => {
                 setArtwork(res.data[0]);
             }).catch((err) => {
@@ -40,7 +42,7 @@ const ViewArt = () => {
     }
 
     useEffect(() => {
-        Axios.get(`https://sihportfolio-1d10e3a48d8c.herokuapp.com/viewArt/${id}`)
+        Axios.get(`https://sihportfolio-1b62f97804c9.herokuapp.com/update/viewArt/${id}`)
         .then((res) => {
             console.log("viewart response: ", res);
             console.log(res.data[0]);
@@ -55,7 +57,7 @@ const ViewArt = () => {
         <div className="viewArt">
             <p className="title">{artwork.title}</p>
             <p className="date">{artwork.date}</p>
-            <img src={`https://sihportfolio-1d10e3a48d8c.herokuapp.com/images/${artwork.art}`} alt={artwork.title} />
+            <img src={`https://sihportfolio-1b62f97804c9.herokuapp.com/images/${artwork.art}`} alt={artwork.title} />
             <p className="description">{artwork.description}</p>
         </div>
         

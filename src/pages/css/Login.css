@@ -1,8 +1,19 @@
 .login-container {
-    padding: 20px;
-    height: 420px;
-    width: 500px;
-    margin: 30px auto;
+    padding: 2rem;
+    height: 40vh;
+    max-height: 500px;
+    width: 45vw;
+    margin: 3rem auto;
     background-color: #0F0402;
-    box-shadow: 10px 20px 10px #060201;
+    box-shadow: 1rem 2rem 1rem #060201;
+}
+
+.register-container {
+    padding: 2rem;
+    height: 40vh;
+    max-height: 500px;
+    width: 45vw;
+    margin: 3rem auto;
+    background-color: #0F0402;
+    box-shadow: 1rem 2rem 1rem #060201;
 }

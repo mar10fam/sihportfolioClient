@@ -1,12 +1,12 @@
 .aboutme-container {
     margin: 40px auto 40px;
-    width: 50%;
+    width: 60%;
 }
 
 .aboutme-container p {
     font-size: 24pt;
     font-weight: 600;
-    margin-left: 10px;
+    margin-left: 1rem;
     text-align: left;
 }
 
@@ -18,7 +18,7 @@
 .divider {
     border: none;
     border-top: 2px solid #ffffff;
-    margin: 50px auto 50px;
+    margin: 4rem auto 4rem;
     max-width: 100%;
 }
 
@@ -32,8 +32,8 @@
 .aboutme-container li {
     background-color: #1C1C1C;
     color: #ffffff;
-    padding: 0px 15px 0px 5px;
-    margin: 10px;
-    border-radius: 3px;
+    padding: 0 1rem 0 .5rem;
+    margin: 1rem;
+    border-radius: 5%;
     font-size: 12pt;
 }

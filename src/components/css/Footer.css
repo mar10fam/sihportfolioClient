@@ -5,7 +5,7 @@
 
 .footer ul {
     display: flex;
-    margin: 20px auto;
+    margin: 2rem auto;
     list-style: none;
     gap: 4rem;
 }
