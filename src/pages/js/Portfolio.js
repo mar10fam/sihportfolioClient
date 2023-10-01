@@ -49,7 +49,7 @@ const Portfolio = () => {
                 </ul>
             </div>
             <div className="portfolio">
-                {artworks.map((artwork, index) => {
+                {Array.isArray(artworks) && artworks.map((artwork, index) => {
                     return (
                         <div className="portfolio-artworks" key={index}>
                             <Link to={`/viewArt/${artwork.id}`}>
