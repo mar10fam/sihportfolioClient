@@ -1,5 +1,6 @@
 .login-container {
     padding: 2rem;
+    min-height: 350px;
     height: 40vh;
     max-height: 500px;
     width: 45vw;
@@ -10,6 +11,7 @@
 
 .register-container {
     padding: 2rem;
+    min-height: 350px;
     height: 40vh;
     max-height: 500px;
     width: 45vw;
