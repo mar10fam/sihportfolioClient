@@ -7,7 +7,7 @@ import LoginModal from '../../components/js/LoginModal';
 import FormModal from '../../components/js/AdminModal';
 
 const Login = () => {
-  const { setLoggedIn } = useContext(AuthContext);
+  const { loggedIn, setLoggedIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
