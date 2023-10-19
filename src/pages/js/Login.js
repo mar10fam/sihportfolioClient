@@ -93,7 +93,7 @@ const Login = () => {
 
   return (
     <>
-    {!loggedIn ? 
+    
     <div className="login-container">
     <h2>Admin Login</h2>
       <form onSubmit={login}>
@@ -130,7 +130,7 @@ const Login = () => {
         </button>
       </form>
     </div>
-    :
+    
     <div className="register-container">
     <h2>Register a new Admin</h2>
       <form onSubmit={register}>
@@ -167,7 +167,7 @@ const Login = () => {
         </button>
       </form>
     </div>
-    }
+
     
     <LoginModal show={show} handleClose={handleClose} message={message} /> 
 
