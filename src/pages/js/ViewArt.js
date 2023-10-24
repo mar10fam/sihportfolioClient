@@ -24,13 +24,13 @@ const ViewArt = () => {
 
     const update = (event) => {
         event.preventDefault();
-        Axios.put("https://sihportfolio-1b62f97804c9.herokuapp.com/update", {
+        Axios.put("http://http://54.177.109.165/3009/update", {
             id: id,
             title: newTitle,
             date: newDate,
             description: newDescription
         }).then((res) => {
-            Axios.get(`https://sihportfolio-1b62f97804c9.herokuapp.com/update/viewArt/${id}`)
+            Axios.get(`http://http://54.177.109.165/3009/update/viewArt/${id}`)
             .then((res) => {
                 setArtwork(res.data[0]);
             }).catch((err) => {
@@ -42,7 +42,7 @@ const ViewArt = () => {
     }
 
     useEffect(() => {
-        Axios.get(`https://sihportfolio-1b62f97804c9.herokuapp.com/update/viewArt/${id}`)
+        Axios.get(`http://http://54.177.109.165/3009/update/viewArt/${id}`)
         .then((res) => {
             console.log("viewart response: ", res);
             console.log(res.data[0]);
@@ -57,7 +57,7 @@ const ViewArt = () => {
         <div className="viewArt">
             <p className="title">{artwork.title}</p>
             <p className="date">{artwork.date}</p>
-            <img src={`https://sihportfolio-1b62f97804c9.herokuapp.com/images/${artwork.art}`} alt={artwork.title} />
+            <img src={`http://http://54.177.109.165/3009/images/${artwork.art}`} alt={artwork.title} />
             <p className="description">{artwork.description}</p>
         </div>
         

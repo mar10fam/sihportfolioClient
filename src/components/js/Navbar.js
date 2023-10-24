@@ -16,7 +16,7 @@ const Navbar = () => {
 
     const logout = async () => {
         try {
-            const response = await Axios.get('https://sihportfolio-1b62f97804c9.herokuapp.com/logout');
+            const response = await Axios.get('http://http://54.177.109.165/3009/logout');
             if(response.status === 200) {
                 console.log("Logout Successful");
                 setLoggedIn(false);
