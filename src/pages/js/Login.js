@@ -54,13 +54,13 @@ const Login = () => {
   Axios.defaults.withCredentials = true;
   const login = (event) => {
     event.preventDefault();
-    Axios.post("http://http://54.177.109.165/3009/login", {
+    Axios.post("https://54.177.109.165/3009/login", {
       username,
       password
     }).then((res) => {
       console.log("Server Response: ", res);
       handleShow(res.data);
-      Axios.get("http://http://54.177.109.165/3009/login/getLogin").then((response) => {
+      Axios.get("https://54.177.109.165/3009/login/getLogin").then((response) => {
       console.log(response);
       if(response.data.loggedIn === true) {
         setLoggedIn(true);
@@ -78,7 +78,7 @@ const Login = () => {
       setFormMessage("Please do not leave username or password blank"); 
       setFormShow(true);
     } else {
-      Axios.post("http://http://54.177.109.165/3009/login/newadmin", { 
+      Axios.post("https://54.177.109.165/3009/login/newadmin", { 
         registerUser, 
         registerPw 
       }).then((res) => { 
