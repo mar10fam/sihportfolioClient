@@ -20,7 +20,7 @@ const Portfolio = () => {
         } else {
             select = "SELECT * FROM artworks WHERE type = 'study'";
         }
-        Axios.post("https://54.177.109.165/3009/portfolio", {
+        Axios.post("https://54.177.109.165:3009/portfolio", {
             withCredentials: true,
             select
         }).then((res) => {
@@ -31,7 +31,7 @@ const Portfolio = () => {
     }, [category]);
 
     const deleteArt = (id, art) => {
-        Axios.delete(`https://54.177.109.165/3009/portfolio/deleteArt/${id}/${art}`)
+        Axios.delete(`https://54.177.109.165:3009/portfolio/deleteArt/${id}/${art}`)
         .then((res) => {
             setArtworks(artworks.filter((val) => {
                 return val.id !== id;
@@ -53,7 +53,7 @@ const Portfolio = () => {
                     return (
                         <div className="portfolio-artworks" key={index}>
                             <Link to={`/viewArt/${artwork.id}`}>
-                                <img src={`https://54.177.109.165/3009/images/${artwork.art}`} alt={artwork.title} />
+                                <img src={`https://54.177.109.165:3009/images/${artwork.art}`} alt={artwork.title} />
                             </Link>
                             <div className="art-title">{artwork.title}</div>
                             {loggedIn && 
