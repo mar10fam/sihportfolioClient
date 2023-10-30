@@ -31,7 +31,7 @@ const Form = () => {
     formData.append('description', description);
     formData.append('art', art);
   
-    Axios.post("https://54.177.109.165:3009/form", 
+    Axios.post("https://sihportfolio-247b71a20dfc.herokuapp.com/form", 
       formData
     ).then((res) => {
       console.log("Server Response: ", res);
