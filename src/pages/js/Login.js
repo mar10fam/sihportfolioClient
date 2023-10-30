@@ -45,6 +45,9 @@ const Login = () => {
     if(message === "There was an error attempting to register the admin") {
       setFormMessage(message);
       setFormShow(true);
+    } else if(message === "There was an error attempting to register the admin into the database") {
+      setFormMessage("There was an error attempting to register the admin");
+      setFormShow(true);
     } else {
       setFormMessage(`You've successfully added ${registerUser} as an admin`);
       setFormShow(true);
