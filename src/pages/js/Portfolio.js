@@ -30,13 +30,14 @@ const Portfolio = () => {
         })
     }, [category]);
 
-    const deleteArt = (id, art) => {
-        Axios.delete(`https://sihportfolio-247b71a20dfc.herokuapp.com/portfolio/deleteArt/${id}/${art}`)
-        .then((res) => {
+    const deleteArt = (id, artFileName) => {
+        Axios.delete(`https://sihportfolio-247b71a20dfc.herokuapp.com/portfolio/deleteArt/${id}`)
+        .then(() => {
             setArtworks(artworks.filter((val) => {
                 return val.id !== id;
             }))
         })
+        Axios.delete(`https://sihportfolio-247b71a20dfc.herokuapp.com/art/delete/${artFileName}`);
     }
 
     return (
@@ -53,7 +54,7 @@ const Portfolio = () => {
                     return (
                         <div className="portfolio-artworks" key={index}>
                             <Link to={`/viewArt/${artwork.id}`}>
-                                <img src={`https://sihportfolio-247b71a20dfc.herokuapp.com/images/${artwork.art}`} alt={artwork.title} />
+                                <img src={`https://firebasestorage.googleapis.com/v0/b/sihportfolioart.appspot.com/o/${artwork.artFileName}?alt=media`} alt={artwork.title} />
                             </Link>
                             <div className="art-title">{artwork.title}</div>
                             {loggedIn && 
@@ -62,7 +63,7 @@ const Portfolio = () => {
                                 size="xl" 
                                 className="art-delete" 
                                 onClick={() => {
-                                    deleteArt(artwork.id, artwork.art)
+                                    deleteArt(artwork.id, artwork.artFileName)
                                 }}
                             />
                             }

@@ -22,24 +22,35 @@ const Form = () => {
   }
 
   Axios.defaults.withCredentials = true;
-  const submit = (event) => {
+  const submit = async (event) => {
     event.preventDefault();
-    const formData = new FormData();
-    formData.append('title', title);
-    formData.append('type', type);
-    formData.append('date', date);
-    formData.append('description', description);
-    formData.append('art', art);
-  
-    Axios.post("https://sihportfolio-247b71a20dfc.herokuapp.com/form", 
-      formData
-    ).then((res) => {
-      console.log("Server Response: ", res);
-    }).then(() => {
+
+    try {
+      const artData = new FormData();
+      artData.append('art', art);
+      
+      const addArt = await Axios.post("https://sihportfolio-247b71a20dfc.herokuapp.com/art/addArt", artData);
+      const artFileName = addArt.data.artFileName
+
+      const formData = {
+        title: title,
+        type: type, 
+        date: date,
+        description: description,
+        artFileName: artFileName
+      }
+
+      const submitForm = await Axios.post("https://sihportfolio-247b71a20dfc.herokuapp.com/form", formData, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      console.log("Server Response: ", submitForm);
+
       navigate('/');
-    }).catch((err) => {
-      console.error("Error ", err);
-    })
+    } catch(err) {
+      console.error(err);
+    }
   }
 
   return (

@@ -34,6 +34,9 @@ const Login = () => {
       } else if(message === "We could not find an admin with that username and password") {
         setMessage(message);
         setShow(true);
+      } else {
+        setMessage("There was en error logging in")
+        setShow(true);
       }
     }
     
