@@ -99,81 +99,81 @@ const Login = () => {
 
   return (
     <>
-    
-    <div className="login-container">
-    <h2>Admin Login</h2>
-      <form onSubmit={login}>
-        <div className="form-group">
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            onChange={(e) => {
-              setUsername(e.target.value);
-            }}
-            autoComplete="username"
-            className="form-control"
-            id="username"
-            name="username"
-            placeholder="Enter username"
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-            autoComplete="current-password"
-            className="form-control"
-            id="password"
-            name="password"
-            placeholder="Enter password"
-          />
-        </div>
-        <button className="btn btn-primary">
-          Login
-        </button>
-      </form>
-    </div>
-    
-    <div className="register-container">
-    <h2>Register a new Admin</h2>
-      <form onSubmit={register}>
-        <div className="form-group">
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            onChange={(e) => {
-              setRegisterUser(e.target.value);
-            }}
-            autoComplete="username"
-            className="form-control"
-            id="registerUser"
-            name="username"
-            placeholder="Enter username"
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
-          <input
-            type="text"
-            onChange={(e) => {
-              setRegisterPw(e.target.value);
-            }}
-            autoComplete="current-password"
-            className="form-control"
-            id="registerPw"
-            name="password"
-            placeholder="Enter password"
-          />
-        </div>
-        <button className="btn btn-primary">
-          Register
-        </button>
-      </form>
-    </div>
-
+    {!loggedIn ? 
+      <div className="login-container">
+      <h2>Admin Login</h2>
+        <form onSubmit={login}>
+          <div className="form-group">
+            <label htmlFor="username">Username:</label>
+            <input
+              type="text"
+              onChange={(e) => {
+                setUsername(e.target.value);
+              }}
+              autoComplete="username"
+              className="form-control"
+              id="username"
+              name="username"
+              placeholder="Enter username"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+              autoComplete="current-password"
+              className="form-control"
+              id="password"
+              name="password"
+              placeholder="Enter password"
+            />
+          </div>
+          <button className="btn btn-primary">
+            Login
+          </button>
+        </form>
+      </div> 
+      :
+      <div className="register-container">
+      <h2>Register a new Admin</h2>
+        <form onSubmit={register}>
+          <div className="form-group">
+            <label htmlFor="username">Username:</label>
+            <input
+              type="text"
+              onChange={(e) => {
+                setRegisterUser(e.target.value);
+              }}
+              autoComplete="username"
+              className="form-control"
+              id="registerUser"
+              name="username"
+              placeholder="Enter username"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password:</label>
+            <input
+              type="text"
+              onChange={(e) => {
+                setRegisterPw(e.target.value);
+              }}
+              autoComplete="current-password"
+              className="form-control"
+              id="registerPw"
+              name="password"
+              placeholder="Enter password"
+            />
+          </div>
+          <button className="btn btn-primary">
+            Register
+          </button>
+        </form>
+      </div>
+    }
     
     <LoginModal show={show} handleClose={handleClose} message={message} /> 
 
