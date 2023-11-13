@@ -57,7 +57,7 @@ const ViewArt = () => {
         <div className="viewArt">
             <p className="title">{artwork.title}</p>
             <p className="date">{artwork.date}</p>
-            <img src={`https://sihportfolio-247b71a20dfc.herokuapp.com/images/${artwork.art}`} alt={artwork.title} />
+            <img src={artwork.artUrl} alt={artwork.title} />
             <p className="description">{artwork.description}</p>
         </div>
         
