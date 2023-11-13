@@ -57,7 +57,7 @@ const ViewArt = () => {
         <div className="viewArt">
             <p className="title">{artwork.title}</p>
             <p className="date">{artwork.date}</p>
-            <img src={artwork.artUrl} alt={artwork.title} />
+            <img src={`https://firebasestorage.googleapis.com/v0/b/sihportfolioart.appspot.com/o/${artwork.artFileName}?alt=media`} alt={artwork.title} />
             <p className="description">{artwork.description}</p>
         </div>
         
