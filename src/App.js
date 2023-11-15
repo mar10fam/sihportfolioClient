@@ -10,6 +10,7 @@ import PrivateRoute from "./utils/PrivateRoute";
 import Header from "./components/js/Header";
 import Footer from "./components/js/Footer";
 import Navbar from "./components/js/Navbar";
+import BotNavbar from "./components/js/BotNavbar";
 import { AuthContext } from './Context/AuthContext';
 
 function App() {
@@ -31,6 +32,7 @@ const [loggedIn, setLoggedIn ] = useState(false);
               </Route>
             </Routes>
         </div>
+        <BotNavbar />
         <Footer />
       </>
     </AuthContext.Provider>

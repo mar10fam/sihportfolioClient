@@ -43,7 +43,7 @@ const Portfolio = () => {
     return (
         <>
             <div className="filter">
-                <ul className="filter-list">
+                <ul>
                     <li onClick={() => setCategory("all")}>All</li>
                     <li onClick={() => setCategory("illustration")}>Illustrations</li>
                     <li onClick={() => setCategory("study")}>Studies</li>

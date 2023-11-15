@@ -1,29 +1,56 @@
-.viewArt {
-    margin: 0;
+@media (min-width: 768px) {
+    .viewArt {
+        margin: 0;
+    }
+    
+    .viewArt .title {
+        font-size: 3.5rem;
+    }
+    
+    .viewArt .date {
+        font-size: 1.5rem;
+    }
+    
+    .viewArt .description {
+        margin: 3rem auto 4rem;
+        max-width: 60rem;
+    }
+    
+    .viewArt img {
+        border: .3rem solid #FF3939;
+        border-radius: 2.5%;
+        width: 40%;
+    }
+    
+    .updateForm {
+        width: 70vw;
+        margin: 4rem auto 2rem;
+        background-color: #0F0402;
+        padding: 2rem;
+    }
 }
 
-.viewArt .title {
-    font-size: 3.5rem;
-}
-
-.viewArt .date {
-    font-size: 1.5rem;
-}
-
-.viewArt .description {
-    margin: 3rem auto 4rem;
-    max-width: 60rem;
-}
-
-.viewArt img {
-    border: .3rem solid #FF3939;
-    border-radius: 2.5%;
-    width: 40%;
-}
-
-.updateForm {
-    width: 70vw;
-    margin: 4rem auto 2rem;
-    background-color: #0F0402;
-    padding: 2rem;
+@media (max-width: 768px) {
+    .viewArt {
+        margin: 0;
+    }
+    
+    .viewArt .title {
+        font-size: 2rem;
+    }
+    
+    .viewArt .date {
+        font-size: 1rem;
+    }
+    
+    .viewArt .description {
+        margin: 3rem auto 4rem;
+        max-width: 60rem;
+    }
+    
+    .viewArt img {
+        border: .3rem solid #FF3939;
+        border-radius: 2.5%;
+        width: 90%;
+    }
 }
