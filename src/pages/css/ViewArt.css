@@ -19,7 +19,7 @@
     .viewArt img {
         border: .3rem solid #FF3939;
         border-radius: 2.5%;
-        width: 40%;
+        width: 50%;
     }
     
     .updateForm {
@@ -51,6 +51,7 @@
     .viewArt img {
         border: .3rem solid #FF3939;
         border-radius: 2.5%;
-        width: 90%;
+        max-width: 90%;
+        min-height: 40vh;
     }
 }
