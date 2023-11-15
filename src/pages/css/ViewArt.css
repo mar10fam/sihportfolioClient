@@ -20,6 +20,8 @@
         border: .3rem solid #FF3939;
         border-radius: 2.5%;
         width: 50%;
+        min-height: 60vh;
+        object-fit: cover;
     }
     
     .updateForm {
@@ -53,5 +55,6 @@
         border-radius: 2.5%;
         width: 90%;
         min-height: 30vh;
+        object-fit: cover;
     }
 }
